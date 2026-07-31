@@ -1,12 +1,9 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-export const metadata = {
-  title: "Sitemap - Star Cool Home Appliance Service Kochi",
-  description: "Navigate all pages and services of Star Cool, the leading home appliance repair provider in Kochi. Find links for AC, fridge, washing machine repairs and more.",
-};
 
 const services = [
   { name: "Air Conditioner Repair & Servicing", path: "/services/ac", desc: "Leak fixing, gas refills, compressor replacement, filter cleaning, and breakdown repairs." },
@@ -18,6 +15,8 @@ const services = [
 ];
 
 export default function SitemapPage() {
+  const [selectedService, setSelectedService] = useState("");
+
   return (
     <>
       <Navbar />
@@ -101,7 +100,7 @@ export default function SitemapPage() {
         </div>
       </main>
 
-      <Footer />
+      <Footer setSelectedService={setSelectedService} />
     </>
   );
 }
