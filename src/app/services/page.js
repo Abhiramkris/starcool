@@ -100,8 +100,19 @@ export default function ServicesIndexPage() {
       />
       <Navbar />
 
-      <main style={{ minHeight: "80vh", padding: "100px 0 60px" }}>
-        <div className="container">
+      <main style={{ minHeight: "80vh", paddingBottom: "70px" }}>
+        {/* Breadcrumb section */}
+        <div className="breadcrumb-nav">
+          <div className="container">
+            <nav aria-label="Breadcrumb" className="breadcrumbs-list">
+              <Link href="/">Home</Link>
+              <span className="separator">/</span>
+              <span className="current">Services</span>
+            </nav>
+          </div>
+        </div>
+
+        <div className="container" style={{ padding: "60px 24px 30px" }}>
           <div className="section-header" style={{ textAlign: "center", marginBottom: "48px" }}>
             <span className="subtitle font-bold text-teal">Our Repair Solutions</span>
             <h1 style={{ fontSize: "2.4rem", fontWeight: "800", color: "#0b192c", margin: "14px 0" }}>

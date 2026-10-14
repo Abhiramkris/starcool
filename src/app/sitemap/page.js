@@ -22,9 +22,19 @@ export default function SitemapPage() {
     <>
       <Navbar />
 
-      <main className="sitemap-main" style={{ minHeight: "80vh", padding: "100px 0 60px" }}>
-        <div className="container" style={{ maxWidth: "800px" }}>
-          
+      <main className="sitemap-main" style={{ minHeight: "80vh", paddingBottom: "70px" }}>
+        {/* Breadcrumb section */}
+        <div className="breadcrumb-nav">
+          <div className="container">
+            <nav aria-label="Breadcrumb" className="breadcrumbs-list">
+              <Link href="/">Home</Link>
+              <span className="separator">/</span>
+              <span className="current">Sitemap</span>
+            </nav>
+          </div>
+        </div>
+
+        <div className="container" style={{ maxWidth: "800px", padding: "60px 24px 30px" }}>
           <div className="section-header" style={{ marginBottom: "40px", textAlign: "center" }}>
             <span className="subtitle">Site Directory</span>
             <h1 style={{ fontSize: "2.5rem", fontWeight: "800", color: "#0b192c", margin: "10px 0" }}>Sitemap</h1>

@@ -14,7 +14,7 @@ export default function ServiceDetailClient({ service }) {
     <>
       <Navbar />
 
-      <main className="service-detail-page">
+      <main>
         {/* Breadcrumb section */}
         <div className="breadcrumb-nav">
           <div className="container">
@@ -28,104 +28,110 @@ export default function ServiceDetailClient({ service }) {
           </div>
         </div>
 
-        {/* Hero Section */}
-        <section className="service-hero">
-          <div className="container service-hero-grid">
-            <div className="service-hero-content">
-              <div className="badge-pill">
-                <i className="fa-solid fa-certificate text-cyan"></i> Verified Doorstep Repair in Kochi
-              </div>
-              <h1 className="service-title">{service.h1}</h1>
-              <p className="service-lead">{service.lead}</p>
+        {/* Dynamic Hero Section using standard Star Cool hero grid */}
+        <section className="hero-section" style={{ padding: "60px 0 50px" }}>
+          <div className="container">
+            <div className="hero-header-grid" style={{ marginBottom: "0", alignItems: "flex-start" }}>
               
-              <div className="service-price-tag">
-                <span className="price-label">Pricing Estimate:</span>
-                <span className="price-value">{service.price}</span>
-                <span className="price-sub"> (Includes inspection & diagnosis)</span>
-              </div>
+              {/* Left Column: Heading, Lead, Pricing & CTA */}
+              <div className="service-hero-content">
+                <span className="badge-tag">
+                  <i className="fa-solid fa-certificate text-cyan"></i> Verified Doorstep Repair in Kochi
+                </span>
+                
+                <h1 className="hero-title" id="main-heading" style={{ fontSize: "clamp(30px, 3.8vw, 44px)", marginBottom: "18px", lineHeight: "1.2" }}>
+                  {service.h1}
+                </h1>
+                
+                <p className="hero-subtitle" style={{ fontSize: "16.5px", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "22px" }}>
+                  {service.lead}
+                </p>
 
-              <div className="hero-actions">
-                <a href="#booking" className="btn btn-gradient btn-lg">
-                  <i className="fa-regular fa-calendar-check"></i> Book Doorstep Service
-                </a>
-                <a href="tel:+918590225627" className="btn btn-secondary btn-lg">
-                  <i className="fa-solid fa-phone"></i> +91 85902 25627
-                </a>
-              </div>
-            </div>
+                <div className="service-price-pill">
+                  <span>Pricing Estimate:</span>
+                  <strong>{service.price}</strong>
+                  <span className="price-sub">(Includes inspection & diagnosis)</span>
+                </div>
 
-            <div className="service-hero-visual">
-              <div className="service-image-card">
-                <Image 
-                  src={service.img} 
-                  alt={service.alt} 
-                  width={500} 
-                  height={400} 
-                  priority
-                  style={{ width: "100%", height: "auto", objectFit: "cover", borderRadius: "16px" }}
-                />
-                <div className="service-guarantee-badge">
-                  <i className="fa-solid fa-shield-halved text-cyan"></i>
-                  <span>Up to 90 Days Service Warranty</span>
+                <div className="hero-actions">
+                  <a href="#booking" className="btn btn-gradient btn-lg">
+                    <i className="fa-regular fa-calendar-check"></i> Book Doorstep Service
+                  </a>
+                  <a href="tel:+918590225627" className="btn btn-secondary btn-lg">
+                    <i className="fa-solid fa-phone"></i> +91 85902 25627
+                  </a>
                 </div>
               </div>
+
+              {/* Right Column: Slide Card with Image & Details */}
+              <div>
+                <div 
+                  className="slide-card" 
+                  style={{ 
+                    maxWidth: "100%", 
+                    transform: "none", 
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
+                    border: "1.5px solid rgba(0,0,0,0.1)",
+                    borderRadius: "var(--radius-md)",
+                    overflow: "hidden"
+                  }}
+                >
+                  <div className="slide-img-wrapper" style={{ height: "300px" }}>
+                    <Image 
+                      src={service.img} 
+                      alt={service.alt} 
+                      width={600} 
+                      height={300} 
+                      priority
+                      style={{ objectFit: "cover" }} 
+                    />
+                    <div className="service-tag">{service.price}</div>
+                  </div>
+                  <div className="slide-content">
+                    <h3 className="slide-title">{service.sectionHeading}</h3>
+                    <p className="slide-desc" style={{ marginBottom: "16px" }}>{service.body}</p>
+                    <div className="service-guarantee-badge">
+                      <i className="fa-solid fa-shield-halved text-cyan"></i>
+                      <span>Up to 90 Days Service Warranty</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
 
-        {/* Detailed Description Section */}
-        <section className="service-info-section" style={{ padding: "60px 0", backgroundColor: "#f8fafc" }}>
+        {/* Coverage details */}
+        <section className="services-overview-section" style={{ backgroundColor: "var(--bg-secondary)", padding: "70px 0" }}>
           <div className="container">
-            <div className="service-info-card" style={{
-              backgroundColor: "#ffffff",
-              borderRadius: "16px",
-              padding: "40px",
-              boxShadow: "0 4px 25px rgba(0,0,0,0.05)",
-              border: "1px solid rgba(0,0,0,0.06)",
-              marginBottom: "50px"
-            }}>
-              <span className="subtitle font-bold text-teal" style={{ display: "block", marginBottom: "8px" }}>Expert Diagnosis & Solutions</span>
-              <h2 style={{ fontSize: "1.85rem", fontWeight: "700", color: "#0b192c", marginBottom: "16px" }}>
-                {service.sectionHeading}
-              </h2>
-              <p style={{ fontSize: "1.08rem", lineHeight: "1.75", color: "#374151" }}>
-                {service.body}
-              </p>
-            </div>
-
-            {/* Service Coverage Grid */}
-            <div className="section-header" style={{ marginBottom: "32px", textAlign: "left" }}>
+            <div className="section-header" style={{ marginBottom: "40px" }}>
               <span className="subtitle">Service Coverage</span>
               <h2>Comprehensive Inspection & Repair Checklist</h2>
               <p>Our experienced technicians follow stringent multi-point service protocols with genuine parts.</p>
             </div>
-
-            <div className="grid services-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "24px" }}>
+            
+            <div className="grid services-grid" style={{ maxWidth: "1100px", margin: "0 auto" }}>
               {service.coverage.map((item, idx) => (
-                <div key={idx} className="feature-card" style={{ padding: "28px" }}>
-                  <div className="card-icon" style={{ marginBottom: "16px" }}>
-                    <i className="fa-solid fa-circle-check text-teal"></i>
-                  </div>
-                  <h3 style={{ fontSize: "1.2rem", fontWeight: "700", marginBottom: "8px", color: "#0b192c" }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ color: "#4b5563", fontSize: "0.95rem", lineHeight: "1.5" }}>
-                    {item.desc}
-                  </p>
+                <div 
+                  key={idx} 
+                  className="feature-card" 
+                  style={{ padding: "30px", border: "1.5px solid rgba(0, 0, 0, 0.1)" }}
+                >
+                  <div className="card-icon"><i className="fa-solid fa-circle-check"></i></div>
+                  <h3 style={{ fontSize: "1.2rem", fontWeight: "700", marginBottom: "10px", color: "var(--text-primary)" }}>{item.title}</h3>
+                  <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", lineHeight: "1.6" }}>{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Booking Form Section */}
-        <BookingForm 
-          selectedService={selectedService} 
-          setSelectedService={setSelectedService} 
-        />
+        {/* Dynamic Booking form (prefilled selection) */}
+        <BookingForm selectedService={selectedService} setSelectedService={setSelectedService} />
       </main>
 
-      <Footer setSelectedService={setSelectedService} />
+      <Footer />
     </>
   );
 }
