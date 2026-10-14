@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,18 +19,29 @@ export default function Navbar() {
       <div className="announcement-bar">
         <div className="container announcement-content">
           <span>
-            <i className="fa-solid fa-circle-check text-cyan"></i> Kochi's #1 Rated Home Appliance Service Center
+            <i className="fa-solid fa-circle-check text-cyan"></i> Kochi&apos;s #1 Rated Home Appliance Service Center
           </span>
-          <a href="tel:+919846012345" className="phone-link">
-            <i className="fa-solid fa-phone"></i> Call Now: +91 98460 12345
-          </a>
+          <div className="phone-link">
+            <i className="fa-solid fa-phone"></i> Call Now:{" "}
+            <a href="tel:+918590225627" style={{ color: "inherit", textDecoration: "none" }}>+91 85902 25627</a>
+            {" / "}
+            <a href="tel:+918086301409" style={{ color: "inherit", textDecoration: "none" }}>+91 80863 01409</a>
+          </div>
         </div>
       </div>
 
       {/* Header / Navigation */}
       <header className="main-header">
         <div className="container header-container">
-          <Link href="/" className="logo" id="header-logo">
+          <Link href="/" className="logo" id="header-logo" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
+            <Image 
+              src="/logo-icon-white.png" 
+              alt="Star Cool Logo" 
+              width={46} 
+              height={46} 
+              style={{ objectFit: "contain" }}
+              priority
+            />
             <span className="logo-text">
               STAR <span className="text-cyan">COOL</span>
             </span>
@@ -51,7 +63,7 @@ export default function Navbar() {
               borderBottom: menuOpen ? "1px solid rgba(255, 255, 255, 0.1)" : undefined,
             }}
           >
-            <Link href="/#why-us" className="nav-link" onClick={handleLinkClick}>
+            <Link href="/about" className="nav-link" onClick={handleLinkClick}>
               About
             </Link>
 
@@ -86,6 +98,9 @@ export default function Navbar() {
                   padding: menuOpen ? "0 0 0 16px" : undefined,
                 }}
               >
+                <Link href="/services" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined, fontWeight: "700", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
+                  All Services Directory
+                </Link>
                 <Link href="/services/ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
                   AC Service
                 </Link>
@@ -101,24 +116,27 @@ export default function Navbar() {
                 <Link href="/services/freezer" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
                   Freezer Service
                 </Link>
-                <Link href="/services/dishwasher" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
-                  Dishwasher Service
+                <Link href="/services/ductable-ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
+                  Ductable AC Service
+                </Link>
+                <Link href="/services/cassette-ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
+                  Cassette AC Service
                 </Link>
               </div>
             </div>
 
-            <Link href="/#booking" className="nav-link" onClick={handleLinkClick}>
+            <Link href="/complaint-register" className="nav-link" onClick={handleLinkClick}>
               Complaint Register
             </Link>
-            <Link href="/#services" className="nav-link" onClick={handleLinkClick}>
+            <Link href="/blog" className="nav-link" onClick={handleLinkClick}>
               Blog
             </Link>
-            <Link href="/#contact" className="nav-link" onClick={handleLinkClick}>
+            <Link href="/contact" className="nav-link" onClick={handleLinkClick}>
               Contact Us
             </Link>
           </nav>
 
-          <Link href="/#booking" className="btn btn-primary nav-cta" id="nav-cta-btn">
+          <Link href="/complaint-register" className="btn btn-primary nav-cta" id="nav-cta-btn">
             <i className="fa-regular fa-calendar-check"></i> Book Online
           </Link>
 

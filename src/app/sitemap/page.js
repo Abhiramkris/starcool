@@ -11,7 +11,8 @@ const services = [
   { name: "Refrigerator Repair & Maintenance", path: "/services/refrigerator", desc: "No cooling fixes, frost control errors, gas leak repairs, thermostat and relay changes." },
   { name: "Microwave Oven Service & Repair", path: "/services/microwave", desc: "Magnetron heating element replacements, glass tray motor fixes, and microswitch diagnostics." },
   { name: "Deep Freezer Repair & Servicing", path: "/services/freezer", desc: "Commercial chest freezer gas refilling, fan motor fixes, and temperature control installations." },
-  { name: "Professional Dishwasher Repair", path: "/services/dishwasher", desc: "Spray arm descaling, drain pump motor clearing, heating element replacement, and door latch fixes." },
+  { name: "Ductable AC Maintenance & Repair", path: "/services/ductable-ac", desc: "Blower motor cleaning, duct airflow optimization, and compressor replacement." },
+  { name: "Cassette AC Service & Repair", path: "/services/cassette-ac", desc: "Ceiling unit deep cleaning, drainage pump clearing, and PCB repair." },
 ];
 
 export default function SitemapPage() {
@@ -58,11 +59,43 @@ export default function SitemapPage() {
                   </p>
                 </li>
                 <li>
-                  <Link href="/#booking" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
-                    Book a Service Form
+                  <Link href="/about" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    About Us
                   </Link>
                   <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
-                    Online booking form to request repair service for any home appliance at your location in Kochi.
+                    Learn about Star Cool, offering AC repair in Kochi, commercial HVAC services, refrigeration solutions, and professional AC maintenance in Ernakulam.
+                  </p>
+                </li>
+                <li>
+                  <Link href="/services" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    Services Directory
+                  </Link>
+                  <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
+                    Complete list of appliance repair solutions across Kochi and Edappally.
+                  </p>
+                </li>
+                <li>
+                  <Link href="/complaint-register" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    Complaint Register
+                  </Link>
+                  <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
+                    Register repair or service complaints online for priority technician dispatch within 90 minutes.
+                  </p>
+                </li>
+                <li>
+                  <Link href="/blog" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    Appliance Care & Maintenance Blog
+                  </Link>
+                  <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
+                    Expert guides on AC maintenance, refrigerator troubleshooting, and appliance servicing tips.
+                  </p>
+                </li>
+                <li>
+                  <Link href="/contact" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    Contact Us
+                  </Link>
+                  <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
+                    Office location near Edappally Church, customer support hotlines, and booking inquiries.
                   </p>
                 </li>
               </ul>
