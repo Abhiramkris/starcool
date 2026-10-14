@@ -49,8 +49,8 @@ export default function HomeContent() {
         <section className="services-overview-section" id="services">
           <div className="container">
             <div className="section-header">
-              <span className="subtitle">What We Fix with Expert Skills</span>
-              <h2>Reliable Appliance Care Across Kochi & Edappally</h2>
+              <span className="subtitle">Appliance Coverage</span>
+              <h2>What We Fix with Expert Skills</h2>
               <p>
                 Whether your AC isn&apos;t cooling, your washing machine has stopped working, or your refrigerator needs attention, Star Cool is here to help. Our experienced technicians provide dependable home appliance repair services in Edappally and across Kochi, ensuring your appliances get the care they need.
               </p>
@@ -108,8 +108,8 @@ export default function HomeContent() {
         <section className="why-us-section" id="why-us">
           <div className="container why-container">
             <div className="why-text">
-              <span className="subtitle font-bold text-teal">Professional Appliance Repairs with Complete Transparency</span>
-              <h2>Why Choose Star Cool for AC Repair & HVAC Services in Kochi?</h2>
+              <span className="subtitle font-bold text-teal">Why Choose Star Cool</span>
+              <h2>Professional Appliance Repairs with Complete Transparency</h2>
               <p>
                 At Star Cool, we believe appliance repairs should be straightforward and stress-free. Our technicians carefully inspect your appliance, explain the issue, and discuss the repair process before getting started. With prompt service, clear communication, and dependable home appliance servicing in Kochi, we aim to make every repair experience smooth and worry-free.
               </p>
