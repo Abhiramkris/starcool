@@ -61,6 +61,9 @@ export const metadata = {
     description: "Looking for AC repair in Kochi? Star Cool offers AC service in Kochi, refrigerator repair, washing machine repair, AC installation, and maintenance.",
     images: ["/icon.png"],
   },
+  verification: {
+    google: "UhR_XLFp6yrP4UAABq-jUMhPZpq0tZRGcsokkNSUxok",
+  },
   other: {
     "geo.region": "IN-KL",
     "geo.placename": "Kochi, Edappally, Ernakulam",
