@@ -67,11 +67,12 @@ export default function BookingForm({ selectedService, setSelectedService }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  // Automatically reset issue state when selected appliance changes
-  useEffect(() => {
+  const [prevService, setPrevService] = useState(selectedService);
+  if (prevService !== selectedService) {
+    setPrevService(selectedService);
     setSelectedIssue("");
     setCustomIssueText("");
-  }, [selectedService]);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

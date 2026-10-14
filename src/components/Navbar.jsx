@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="announcement-bar">
         <div className="container announcement-content">
           <span>
-            <i className="fa-solid fa-circle-check text-cyan"></i> Kochi's #1 Rated Home Appliance Service Center
+            <i className="fa-solid fa-circle-check text-cyan"></i> Kochi&apos;s #1 Rated Home Appliance Service Center
           </span>
           <div className="phone-link">
             <i className="fa-solid fa-phone"></i> Call Now:{" "}
@@ -63,7 +63,7 @@ export default function Navbar() {
               borderBottom: menuOpen ? "1px solid rgba(255, 255, 255, 0.1)" : undefined,
             }}
           >
-            <Link href="/#why-us" className="nav-link" onClick={handleLinkClick}>
+            <Link href="/about" className="nav-link" onClick={handleLinkClick}>
               About
             </Link>
 
@@ -98,6 +98,9 @@ export default function Navbar() {
                   padding: menuOpen ? "0 0 0 16px" : undefined,
                 }}
               >
+                <Link href="/services" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined, fontWeight: "700", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
+                  All Services Directory
+                </Link>
                 <Link href="/services/ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
                   AC Service
                 </Link>
@@ -122,18 +125,18 @@ export default function Navbar() {
               </div>
             </div>
 
-            <Link href="/#booking" className="nav-link" onClick={handleLinkClick}>
+            <Link href="/complaint-register" className="nav-link" onClick={handleLinkClick}>
               Complaint Register
             </Link>
-            <Link href="/#services" className="nav-link" onClick={handleLinkClick}>
+            <Link href="/blog" className="nav-link" onClick={handleLinkClick}>
               Blog
             </Link>
-            <Link href="/#contact" className="nav-link" onClick={handleLinkClick}>
+            <Link href="/contact" className="nav-link" onClick={handleLinkClick}>
               Contact Us
             </Link>
           </nav>
 
-          <Link href="/#booking" className="btn btn-primary nav-cta" id="nav-cta-btn">
+          <Link href="/complaint-register" className="btn btn-primary nav-cta" id="nav-cta-btn">
             <i className="fa-regular fa-calendar-check"></i> Book Online
           </Link>
 

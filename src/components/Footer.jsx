@@ -2,14 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer({ setSelectedService }) {
-  const handleServiceClick = (serviceId) => {
-    setSelectedService(serviceId);
-    const bookingSection = document.getElementById("booking");
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+export default function Footer() {
 
   return (
     <footer className="main-footer" id="contact">
@@ -44,32 +37,52 @@ export default function Footer({ setSelectedService }) {
         </div>
 
         <div className="footer-links">
-          <h3>Services</h3>
+          <h3>Our Services</h3>
           <ul>
             <li>
-              <button className="btn-link-raw" style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }} onClick={() => handleServiceClick("ac")}>
-                AC Repair
-              </button>
+              <Link href="/services/ac">AC Service & Repair</Link>
             </li>
             <li>
-              <button className="btn-link-raw" style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }} onClick={() => handleServiceClick("washing_machine")}>
-                Washing Machine Repair
-              </button>
+              <Link href="/services/washing-machine">Washing Machine Repair</Link>
             </li>
             <li>
-              <button className="btn-link-raw" style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }} onClick={() => handleServiceClick("refrigerator")}>
-                Refrigerator Repair
-              </button>
+              <Link href="/services/refrigerator">Refrigerator Repair</Link>
             </li>
             <li>
-              <button className="btn-link-raw" style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }} onClick={() => handleServiceClick("tv")}>
-                TV Diagnostics
-              </button>
+              <Link href="/services/microwave">Microwave Oven Repair</Link>
             </li>
             <li>
-              <button className="btn-link-raw" style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }} onClick={() => handleServiceClick("microwave")}>
-                Microwave Servicing
-              </button>
+              <Link href="/services/freezer">Deep Freezer Repair</Link>
+            </li>
+            <li>
+              <Link href="/services/ductable-ac">Ductable AC Service</Link>
+            </li>
+            <li>
+              <Link href="/services/cassette-ac">Cassette AC Service</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About Us</Link>
+            </li>
+            <li>
+              <Link href="/services">All Services Directory</Link>
+            </li>
+            <li>
+              <Link href="/complaint-register">Complaint Register</Link>
+            </li>
+            <li>
+              <Link href="/blog">Maintenance Blog</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact Us</Link>
             </li>
           </ul>
         </div>

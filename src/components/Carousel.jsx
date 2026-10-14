@@ -110,7 +110,7 @@ export default function Carousel({ setSelectedService }) {
       const scrollerRect = scroller.getBoundingClientRect();
       const scrollerCenter = scrollerRect.left + scrollerRect.width / 2;
       let minDistance = Infinity;
-      let calculatedActiveIndex = activeIndex;
+      let calculatedActiveIndex = 3;
 
       // Find the currently centered slide card
       itemsRef.current.forEach((item, idx) => {

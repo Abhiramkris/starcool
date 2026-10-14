@@ -59,11 +59,43 @@ export default function SitemapPage() {
                   </p>
                 </li>
                 <li>
-                  <Link href="/#booking" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
-                    Book a Service Form
+                  <Link href="/about" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    About Us
                   </Link>
                   <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
-                    Online booking form to request repair service for any home appliance at your location in Kochi.
+                    Learn about Star Cool, offering AC repair in Kochi, commercial HVAC services, refrigeration solutions, and professional AC maintenance in Ernakulam.
+                  </p>
+                </li>
+                <li>
+                  <Link href="/services" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    Services Directory
+                  </Link>
+                  <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
+                    Complete list of appliance repair solutions across Kochi and Edappally.
+                  </p>
+                </li>
+                <li>
+                  <Link href="/complaint-register" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    Complaint Register
+                  </Link>
+                  <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
+                    Register repair or service complaints online for priority technician dispatch within 90 minutes.
+                  </p>
+                </li>
+                <li>
+                  <Link href="/blog" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    Appliance Care & Maintenance Blog
+                  </Link>
+                  <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
+                    Expert guides on AC maintenance, refrigerator troubleshooting, and appliance servicing tips.
+                  </p>
+                </li>
+                <li>
+                  <Link href="/contact" style={{ color: "#0b192c", fontWeight: "600", textDecoration: "none", fontSize: "1.1rem" }} className="sitemap-link">
+                    Contact Us
+                  </Link>
+                  <p style={{ margin: "4px 0 0 0", color: "#6b7280", fontSize: "0.95rem" }}>
+                    Office location near Edappally Church, customer support hotlines, and booking inquiries.
                   </p>
                 </li>
               </ul>
