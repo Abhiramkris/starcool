@@ -9,7 +9,7 @@ const slideData = [
     title: "AC Not Cooling?",
     tag: "AC Service",
     desc: "Do not worry! Just Call Star Cool. Get your AC serviced by expert technicians.",
-    price: "₹399",
+    price: "₹750",
     img: "/images/ac.png",
     alt: "Home appliance technician servicing AC"
   },
@@ -18,7 +18,7 @@ const slideData = [
     title: "Washing Machine Service",
     tag: "Washing Machine",
     desc: "Washing Machine repair at Affordable, Professional & Reliable Service.",
-    price: "₹499",
+    price: "₹750",
     img: "/images/washing_machine.png",
     alt: "Appliance service in Kochi for washing machine"
   },
@@ -27,7 +27,7 @@ const slideData = [
     title: "Refrigerator Not Working?",
     tag: "Refrigerator",
     desc: "Star Cool is here to fix all the problems relating to refrigerators.",
-    price: "₹450",
+    price: "₹499",
     img: "/images/refrigerator.png",
     alt: "Kochi appliance repair for refrigerator"
   },

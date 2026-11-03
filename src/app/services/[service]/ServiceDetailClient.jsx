@@ -102,6 +102,71 @@ export default function ServiceDetailClient({ service }) {
           </div>
         </section>
 
+        {/* Official Rate Card Section */}
+        {service.rateCard && service.rateCard.length > 0 && (
+          <section className="rate-card-section" style={{ padding: "60px 0 20px" }}>
+            <div className="container" style={{ maxWidth: "860px" }}>
+              <div className="section-header" style={{ textAlign: "center", marginBottom: "32px" }}>
+                <span className="subtitle font-bold text-teal">Transparent Pricing</span>
+                <h2 style={{ fontSize: "2rem", fontWeight: "800", color: "var(--text-primary)", margin: "10px 0" }}>
+                  Official Service Rate Card
+                </h2>
+                <p style={{ color: "var(--text-secondary)" }}>
+                  Clear, upfront estimates with zero hidden charges. Doorstep inspection and diagnostics across Kochi.
+                </p>
+              </div>
+
+              <div 
+                style={{
+                  background: "#ffffff",
+                  borderRadius: "var(--radius-md)",
+                  border: "1.5px solid rgba(0, 0, 0, 0.08)",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.04)",
+                  overflow: "hidden"
+                }}
+              >
+                <div style={{ overflowX: "auto" }}>
+                  <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
+                    <thead>
+                      <tr style={{ backgroundColor: "var(--teal-dark)", color: "#ffffff" }}>
+                        <th style={{ padding: "16px 24px", fontSize: "14px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                          Service Description
+                        </th>
+                        <th style={{ padding: "16px 24px", fontSize: "14px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.5px", textAlign: "right", whiteSpace: "nowrap" }}>
+                          Estimated Rate (₹)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {service.rateCard.map((item, idx) => (
+                        <tr 
+                          key={idx} 
+                          style={{ 
+                            borderBottom: idx !== service.rateCard.length - 1 ? "1px solid rgba(0, 0, 0, 0.06)" : "none",
+                            backgroundColor: idx % 2 === 0 ? "#ffffff" : "var(--bg-secondary)"
+                          }}
+                        >
+                          <td style={{ padding: "16px 24px", color: "var(--text-primary)", fontWeight: "500", fontSize: "15px" }}>
+                            <i className="fa-solid fa-circle-check text-cyan" style={{ marginRight: "10px", fontSize: "13px" }}></i>
+                            {item.service}
+                          </td>
+                          <td style={{ padding: "16px 24px", color: "var(--teal-dark)", fontWeight: "700", fontSize: "15.5px", textAlign: "right", whiteSpace: "nowrap" }}>
+                            {item.rate}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div style={{ padding: "14px 24px", backgroundColor: "#f8fafc", borderTop: "1px solid rgba(0,0,0,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px", fontSize: "13px", color: "var(--text-muted)" }}>
+                  <span>* Final charges subject to physical inspection & required spare parts.</span>
+                  <a href="#booking" style={{ color: "var(--teal)", fontWeight: "700" }}>Book Now &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Coverage details */}
         <section className="services-overview-section" style={{ backgroundColor: "var(--bg-secondary)", padding: "70px 0" }}>
           <div className="container">

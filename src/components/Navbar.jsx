@@ -1,12 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [menuOpen]);
 
   const handleLinkClick = () => {
     setMenuOpen(false);
@@ -33,7 +45,7 @@ export default function Navbar() {
       {/* Header / Navigation */}
       <header className="main-header">
         <div className="container header-container">
-          <Link href="/" className="logo" id="header-logo" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
+          <Link href="/" className="logo" id="header-logo" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }} onClick={handleLinkClick}>
             <Image 
               src="/logo-icon-white.png" 
               alt="Star Cool Logo" 
@@ -53,32 +65,66 @@ export default function Navbar() {
             style={{
               display: menuOpen ? "flex" : undefined,
               flexDirection: menuOpen ? "column" : undefined,
-              position: menuOpen ? "absolute" : undefined,
-              top: menuOpen ? "80px" : undefined,
+              position: menuOpen ? "fixed" : undefined,
+              top: menuOpen ? "72px" : undefined,
               left: menuOpen ? "0" : undefined,
-              width: menuOpen ? "100vw" : undefined,
-              backgroundColor: menuOpen ? "rgba(15, 118, 110, 0.98)" : undefined,
-              padding: menuOpen ? "24px" : undefined,
-              gap: menuOpen ? "16px" : undefined,
-              borderBottom: menuOpen ? "1px solid rgba(255, 255, 255, 0.1)" : undefined,
+              right: menuOpen ? "0" : undefined,
+              bottom: menuOpen ? "0" : undefined,
+              width: menuOpen ? "100%" : undefined,
+              height: menuOpen ? "calc(100vh - 72px)" : undefined,
+              backgroundColor: menuOpen ? "#0d5c56" : undefined,
+              padding: menuOpen ? "28px 24px 60px" : undefined,
+              gap: menuOpen ? "18px" : undefined,
+              overflowY: menuOpen ? "auto" : undefined,
+              zIndex: menuOpen ? 9999 : undefined,
+              boxShadow: menuOpen ? "0 10px 30px rgba(0,0,0,0.3)" : undefined,
             }}
           >
-            <Link href="/about" className="nav-link" onClick={handleLinkClick}>
+            <Link 
+              href="/about" 
+              className="nav-link" 
+              onClick={handleLinkClick}
+              style={{ 
+                color: "#ffffff", 
+                fontSize: menuOpen ? "18px" : undefined,
+                fontWeight: menuOpen ? "600" : undefined,
+                borderBottom: menuOpen ? "1px solid rgba(255, 255, 255, 0.08)" : undefined,
+                paddingBottom: menuOpen ? "12px" : undefined,
+                width: menuOpen ? "100%" : undefined
+              }}
+            >
               About
             </Link>
 
             {/* Services Dropdown */}
             <div 
               className="nav-item-dropdown"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
+              onMouseEnter={() => !menuOpen && setDropdownOpen(true)}
+              onMouseLeave={() => !menuOpen && setDropdownOpen(false)}
+              style={{ width: menuOpen ? "100%" : undefined }}
             >
               <button 
+                type="button"
                 className="nav-link dropdown-toggle" 
-                style={{ background: "none", border: "none", cursor: "pointer", width: "100%", textAlign: "left" }}
+                style={{ 
+                  background: "none", 
+                  border: "none", 
+                  cursor: "pointer", 
+                  width: "100%", 
+                  textAlign: "left",
+                  color: "#ffffff",
+                  fontSize: menuOpen ? "18px" : undefined,
+                  fontWeight: menuOpen ? "600" : undefined,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  borderBottom: menuOpen ? "1px solid rgba(255, 255, 255, 0.08)" : undefined,
+                  paddingBottom: menuOpen ? "12px" : undefined
+                }}
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
-                Services <i className="fa-solid fa-chevron-down" style={{ fontSize: "11px" }}></i>
+                <span>Services</span>
+                <i className={`fa-solid ${dropdownOpen ? "fa-chevron-up" : "fa-chevron-down"}`} style={{ fontSize: "14px" }}></i>
               </button>
               
               <div 
@@ -87,53 +133,112 @@ export default function Navbar() {
                   display: dropdownOpen ? "flex" : undefined,
                   opacity: dropdownOpen ? 1 : undefined,
                   visibility: dropdownOpen ? "visible" : undefined,
-                  transform: dropdownOpen ? "translateX(-50%) translateY(4px)" : undefined,
-                  // Mobile adjustment overrides:
+                  // Mobile adjustments:
                   position: menuOpen ? "static" : undefined,
-                  transform: menuOpen ? "none" : undefined,
+                  transform: menuOpen ? "none" : dropdownOpen ? "translateX(-50%) translateY(4px)" : undefined,
                   minWidth: menuOpen ? "100%" : undefined,
                   boxShadow: menuOpen ? "none" : undefined,
-                  backgroundColor: menuOpen ? "transparent" : undefined,
+                  backgroundColor: menuOpen ? "rgba(0, 0, 0, 0.15)" : undefined,
+                  borderRadius: menuOpen ? "10px" : undefined,
                   border: menuOpen ? "none" : undefined,
-                  padding: menuOpen ? "0 0 0 16px" : undefined,
+                  padding: menuOpen ? "8px 12px" : undefined,
+                  marginTop: menuOpen ? "8px" : undefined,
+                  marginBottom: menuOpen ? "8px" : undefined,
+                  gap: menuOpen ? "4px" : undefined
                 }}
               >
-                <Link href="/services" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined, fontWeight: "700", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
+                <Link href="/services" className="dropdown-item" onClick={handleLinkClick} style={{ color: "#ffffff", fontWeight: "700", borderBottom: menuOpen ? "1px solid rgba(255,255,255,0.1)" : undefined }}>
                   All Services Directory
                 </Link>
-                <Link href="/services/ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
+                <Link href="/services/ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#f1f5f9" : undefined }}>
                   AC Service
                 </Link>
-                <Link href="/services/washing-machine" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
+                <Link href="/services/washing-machine" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#f1f5f9" : undefined }}>
                   Washing Machine Service
                 </Link>
-                <Link href="/services/refrigerator" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
+                <Link href="/services/refrigerator" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#f1f5f9" : undefined }}>
                   Refrigerator Service
                 </Link>
-                <Link href="/services/microwave" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
+                <Link href="/services/microwave" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#f1f5f9" : undefined }}>
                   Microwave Service
                 </Link>
-                <Link href="/services/freezer" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
+                <Link href="/services/freezer" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#f1f5f9" : undefined }}>
                   Freezer Service
                 </Link>
-                <Link href="/services/ductable-ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
+                <Link href="/services/ductable-ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#f1f5f9" : undefined }}>
                   Ductable AC Service
                 </Link>
-                <Link href="/services/cassette-ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#ffffff" : undefined }}>
+                <Link href="/services/cassette-ac" className="dropdown-item" onClick={handleLinkClick} style={{ color: menuOpen ? "#f1f5f9" : undefined }}>
                   Cassette AC Service
                 </Link>
               </div>
             </div>
 
-            <Link href="/complaint-register" className="nav-link" onClick={handleLinkClick}>
+            <Link 
+              href="/complaint-register" 
+              className="nav-link" 
+              onClick={handleLinkClick}
+              style={{ 
+                color: "#ffffff", 
+                fontSize: menuOpen ? "18px" : undefined,
+                fontWeight: menuOpen ? "600" : undefined,
+                borderBottom: menuOpen ? "1px solid rgba(255, 255, 255, 0.08)" : undefined,
+                paddingBottom: menuOpen ? "12px" : undefined,
+                width: menuOpen ? "100%" : undefined
+              }}
+            >
               Complaint Register
             </Link>
-            <Link href="/blog" className="nav-link" onClick={handleLinkClick}>
+            <Link 
+              href="/blog" 
+              className="nav-link" 
+              onClick={handleLinkClick}
+              style={{ 
+                color: "#ffffff", 
+                fontSize: menuOpen ? "18px" : undefined,
+                fontWeight: menuOpen ? "600" : undefined,
+                borderBottom: menuOpen ? "1px solid rgba(255, 255, 255, 0.08)" : undefined,
+                paddingBottom: menuOpen ? "12px" : undefined,
+                width: menuOpen ? "100%" : undefined
+              }}
+            >
               Blog
             </Link>
-            <Link href="/contact" className="nav-link" onClick={handleLinkClick}>
+            <Link 
+              href="/contact" 
+              className="nav-link" 
+              onClick={handleLinkClick}
+              style={{ 
+                color: "#ffffff", 
+                fontSize: menuOpen ? "18px" : undefined,
+                fontWeight: menuOpen ? "600" : undefined,
+                borderBottom: menuOpen ? "1px solid rgba(255, 255, 255, 0.08)" : undefined,
+                paddingBottom: menuOpen ? "12px" : undefined,
+                width: menuOpen ? "100%" : undefined
+              }}
+            >
               Contact Us
             </Link>
+
+            {menuOpen && (
+              <div style={{ marginTop: "16px", display: "flex", flexDirection: "column", gap: "12px" }}>
+                <Link 
+                  href="/complaint-register" 
+                  className="btn btn-gradient btn-lg" 
+                  onClick={handleLinkClick}
+                  style={{ textAlign: "center", justifyContent: "center", width: "100%", padding: "14px", fontSize: "16px" }}
+                >
+                  <i className="fa-regular fa-calendar-check"></i> Book Online
+                </Link>
+                <a 
+                  href="tel:+918590225627" 
+                  className="btn btn-secondary btn-lg"
+                  style={{ textAlign: "center", justifyContent: "center", width: "100%", padding: "14px", fontSize: "16px", backgroundColor: "rgba(255,255,255,0.1)", color: "#ffffff", borderColor: "rgba(255,255,255,0.2)" }}
+                >
+                  <i className="fa-solid fa-phone"></i> Call +91 85902 25627
+                </a>
+              </div>
+            )}
           </nav>
 
           <Link href="/complaint-register" className="btn btn-primary nav-cta" id="nav-cta-btn">
@@ -145,7 +250,7 @@ export default function Navbar() {
             id="mobile-toggle" 
             aria-label="Toggle Navigation Menu"
             onClick={() => setMenuOpen(!menuOpen)}
-            style={{ color: "#ffffff" }}
+            style={{ color: "#ffffff", fontSize: "26px", zIndex: 10001, display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px" }}
           >
             <i className={menuOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
           </button>

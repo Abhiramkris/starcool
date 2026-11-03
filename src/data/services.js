@@ -18,9 +18,17 @@ export const servicesData = {
     lead: "Star Cool provides certified, fast, and reliable AC repair services in Kochi and Edappally, including AC diagnostics, gas charging, filter cleaning, and compressor replacement. Get your split or window air conditioner serviced by experienced technicians at your doorstep.",
     sectionHeading: "AC Not Cooling? Get Expert AC Repair & Service in Kochi",
     body: "Do not worry! Just call Star Cool for professional AC service in Edappally, Kochi. Our technicians resolve low cooling, water leakage, starting failures, and remote control connectivity issues using genuine spare parts. We also provide reliable AC gas filling and maintenance services in Kochi to improve cooling performance.",
-    price: "From ₹399",
+    price: "From ₹750",
     img: "/images/ac.png",
     alt: "Expert AC Repair & Service in Edappally, Kochi",
+    rateCard: [
+      { service: "AC Normal Service", rate: "₹ 750" },
+      { service: "AC Water Service / Jet Pump Cleaning", rate: "₹ 1,399 – ₹ 1,500" },
+      { service: "AC Installation", rate: "₹ 1,500 – ₹ 2,000" },
+      { service: "AC Gas Charging (Top-up / Refill)", rate: "₹ 1,500 – ₹ 2,300" },
+      { service: "AC Capacitor Replacement", rate: "₹ 350 – ₹ 650" },
+      { service: "Inverter AC PCB Board Repair", rate: "₹ 4,000 – ₹ 5,000" }
+    ],
     coverage: [
       {
         title: "AC Inspection and Diagnostics",
@@ -57,9 +65,18 @@ export const servicesData = {
     lead: "Is your washing machine giving you trouble? Star Cool offers affordable and reliable washing machine repair services in Kochi and Edappally to get your laundry routine back on track. Our experienced technicians handle front-load, top-load, and semi-automatic washing machines from leading brands, providing quality repairs and dependable service to keep your machine running smoothly.",
     sectionHeading: "Washing Machine Service & Repair in Kochi | Front/Top Load",
     body: "Whether your washing machine isn't spinning, making unusual noises, not draining water, or showing error codes, we're here to help. Our skilled technicians identify the problem and provide the right solution, from fixing drum and motor issues to repairing drainage systems and control panels. With our washing machine service in Edappally, you can get your appliance back to working condition without unnecessary hassle.",
-    price: "From ₹499",
+    price: "From ₹750",
     img: "/images/washing_machine.png",
     alt: "Professional Washing Machine Repair in Edappally, Kochi",
+    rateCard: [
+      { service: "General Washing Machine Service", rate: "₹ 750" },
+      { service: "Water Level / Door Sensor Replacement", rate: "₹ 850 – ₹ 950" },
+      { service: "Inlet / Drain Valve Replacement", rate: "₹ 850 – ₹ 1,800" },
+      { service: "Drain Pump Replacement", rate: "₹ 1,600 – ₹ 2,500" },
+      { service: "PCB Modification / Board Repair", rate: "₹ 2,000 – ₹ 4,000" },
+      { service: "Inverter PCB Repair / Replacement", rate: "₹ 4,000 – ₹ 6,000" },
+      { service: "Drum Modification / Mechanical Overhaul", rate: "₹ 6,000 – ₹ 10,000" }
+    ],
     coverage: [
       {
         title: "Washing Machine Drum and Motor Repair",
@@ -96,9 +113,17 @@ export const servicesData = {
     lead: "Is your refrigerator not cooling properly or causing trouble? Star Cool offers affordable and reliable refrigerator repair services in Kochi and Edappally to keep your fridge working smoothly. Whether you have a single-door, double-door, or French-door refrigerator, our experienced technicians can identify and fix common problems, from cooling issues to faulty thermostats. We provide convenient doorstep service, so you don't have to worry about moving your appliance.",
     sectionHeading: "Refrigerator Not Working? Expert Fridge Repair in Kochi",
     body: "A fridge that isn't cooling, has too much ice buildup, or makes unusual noises can be frustrating. At Star Cool, we provide dependable fridge repair services in Edappally, Kochi, helping you fix problems like compressor faults, gas leaks, thermostat issues, and interior light failures. Our technicians carefully check your refrigerator, find out what's wrong, and carry out the necessary repairs to get it cooling properly again.",
-    price: "From ₹450",
+    price: "From ₹499",
     img: "/images/refrigerator.png",
     alt: "Refrigerator Repair & Thermostat Servicing in Kochi",
+    rateCard: [
+      { service: "General Refrigerator Service / Inspection", rate: "₹ 499" },
+      { service: "Defrost / Temperature Sensor Replacement", rate: "₹ 850" },
+      { service: "Thermostat Replacement", rate: "₹ 850" },
+      { service: "Controller Replacement", rate: "₹ 650 – ₹ 950" },
+      { service: "PCB Modification / Control Board Repair", rate: "₹ 2,000 – ₹ 4,000" },
+      { service: "Refrigerant Gas Charging & Leak Arrest", rate: "₹ 2,500 – ₹ 4,000" }
+    ],
     coverage: [
       {
         title: "Refrigerator Thermostat and Relay Repair",
