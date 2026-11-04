@@ -93,7 +93,10 @@ export default function Footer() {
             <i className="fa-solid fa-location-dot text-cyan"></i> Near Edappally Church, Kochi, Kerala - 682024
           </p>
           <p>
-            <i className="fa-solid fa-phone text-cyan"></i> <a href="tel:+918590225627">+91 85902 25627</a> / <a href="tel:+918086301409">+91 80863 01409</a>
+            <i className="fa-brands fa-whatsapp text-cyan" style={{ color: "#25d366" }}></i> WhatsApp: <a href="https://wa.me/918590225627" target="_blank" rel="noopener noreferrer">+91 85902 25627</a>
+          </p>
+          <p>
+            <i className="fa-solid fa-phone text-cyan"></i> Direct Call: <a href="tel:+918086301409">+91 80863 01409</a>
           </p>
           <p>
             <i className="fa-solid fa-envelope text-cyan"></i> <a href="mailto:support@starcoolkochi.com">support@starcoolkochi.com</a>

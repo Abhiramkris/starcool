@@ -53,12 +53,21 @@ export default function ServiceDetailClient({ service }) {
                   <span className="price-sub">(Includes inspection & diagnosis)</span>
                 </div>
 
-                <div className="hero-actions">
+                <div className="hero-actions" style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                   <a href="#booking" className="btn btn-gradient btn-lg">
-                    <i className="fa-regular fa-calendar-check"></i> Book Doorstep Service
+                    <i className="fa-regular fa-calendar-check"></i> Book Online
                   </a>
-                  <a href="tel:+918590225627" className="btn btn-secondary btn-lg">
-                    <i className="fa-solid fa-phone"></i> +91 85902 25627
+                  <a href="tel:+918086301409" className="btn btn-secondary btn-lg">
+                    <i className="fa-solid fa-phone"></i> Call +91 80863 01409
+                  </a>
+                  <a 
+                    href={`https://wa.me/918590225627?text=${encodeURIComponent(`Hi Star Cool, I need ${service.name} in Kochi.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-lg"
+                    style={{ backgroundColor: "#25d366", color: "#ffffff", borderColor: "#20ba59" }}
+                  >
+                    <i className="fa-brands fa-whatsapp"></i> WhatsApp +91 85902 25627
                   </a>
                 </div>
               </div>

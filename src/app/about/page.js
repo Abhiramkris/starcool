@@ -113,10 +113,19 @@ export default function AboutPage() {
 
           <div style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap", margin: "30px 0" }}>
             <Link href="/complaint-register" className="btn btn-gradient btn-lg">
-              <i className="fa-regular fa-calendar-check"></i> Book Doorstep Service
+              <i className="fa-regular fa-calendar-check"></i> Book Online
             </Link>
-            <a href="tel:+918590225627" className="btn btn-secondary btn-lg">
-              <i className="fa-solid fa-phone"></i> Call +91 85902 25627
+            <a href="tel:+918086301409" className="btn btn-secondary btn-lg">
+              <i className="fa-solid fa-phone"></i> Direct Call +91 80863 01409
+            </a>
+            <a 
+              href="https://wa.me/918590225627" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn btn-lg"
+              style={{ backgroundColor: "#25d366", color: "#ffffff", borderColor: "#20ba59" }}
+            >
+              <i className="fa-brands fa-whatsapp"></i> WhatsApp +91 85902 25627
             </a>
           </div>
         </section>

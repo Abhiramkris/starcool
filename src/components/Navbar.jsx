@@ -33,11 +33,24 @@ export default function Navbar() {
           <span>
             <i className="fa-solid fa-circle-check text-cyan"></i> Kochi&apos;s #1 Rated Home Appliance Service Center
           </span>
-          <div className="phone-link">
-            <i className="fa-solid fa-phone"></i> Call Now:{" "}
-            <a href="tel:+918590225627" style={{ color: "inherit", textDecoration: "none" }}>+91 85902 25627</a>
-            {" / "}
-            <a href="tel:+918086301409" style={{ color: "inherit", textDecoration: "none" }}>+91 80863 01409</a>
+          <div className="phone-link" style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
+            <a 
+              href="https://wa.me/918590225627" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ color: "inherit", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}
+            >
+              <i className="fa-brands fa-whatsapp text-teal" style={{ fontSize: "16px", color: "#25d366" }}></i>
+              <span>WhatsApp: <strong>+91 85902 25627</strong></span>
+            </a>
+            <span style={{ opacity: 0.4 }}>|</span>
+            <a 
+              href="tel:+918086301409" 
+              style={{ color: "inherit", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}
+            >
+              <i className="fa-solid fa-phone text-cyan"></i>
+              <span>Direct Call: <strong>+91 80863 01409</strong></span>
+            </a>
           </div>
         </div>
       </div>
@@ -225,21 +238,30 @@ export default function Navbar() {
             </Link>
 
             {menuOpen && (
-              <div style={{ marginTop: "14px", display: "flex", flexDirection: "column", gap: "12px" }}>
+              <div style={{ marginTop: "14px", display: "flex", flexDirection: "column", gap: "10px" }}>
                 <Link 
                   href="/complaint-register" 
                   className="btn btn-gradient btn-lg" 
                   onClick={handleLinkClick}
-                  style={{ textAlign: "center", justifyContent: "center", width: "100%", padding: "14px", fontSize: "16px" }}
+                  style={{ textAlign: "center", justifyContent: "center", width: "100%", padding: "13px", fontSize: "15px" }}
                 >
                   <i className="fa-regular fa-calendar-check"></i> Book Online
                 </Link>
                 <a 
-                  href="tel:+918590225627" 
+                  href="tel:+918086301409" 
                   className="btn btn-secondary btn-lg"
-                  style={{ textAlign: "center", justifyContent: "center", width: "100%", padding: "14px", fontSize: "16px", backgroundColor: "#f0f9ff", color: "var(--teal-dark)", borderColor: "rgba(14, 165, 233, 0.3)" }}
+                  style={{ textAlign: "center", justifyContent: "center", width: "100%", padding: "13px", fontSize: "15px", backgroundColor: "#f0f9ff", color: "var(--teal-dark)", borderColor: "rgba(14, 165, 233, 0.3)" }}
                 >
-                  <i className="fa-solid fa-phone"></i> Call +91 85902 25627
+                  <i className="fa-solid fa-phone"></i> Direct Call: +91 80863 01409
+                </a>
+                <a 
+                  href="https://wa.me/918590225627" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-lg"
+                  style={{ textAlign: "center", justifyContent: "center", width: "100%", padding: "13px", fontSize: "15px", backgroundColor: "#25d366", color: "#ffffff", borderColor: "#20ba59" }}
+                >
+                  <i className="fa-brands fa-whatsapp"></i> WhatsApp: +91 85902 25627
                 </a>
               </div>
             )}

@@ -131,8 +131,8 @@ export default function ContactPage() {
                 Phone Numbers
               </h3>
               <p style={{ color: "#4b5563", lineHeight: "1.8", fontSize: "0.95rem" }}>
-                Primary: <a href="tel:+918590225627" style={{ color: "#008080", fontWeight: "600", textDecoration: "none" }}>+91 85902 25627</a><br />
-                Alternate: <a href="tel:+918086301409" style={{ color: "#008080", fontWeight: "600", textDecoration: "none" }}>+91 80863 01409</a>
+                WhatsApp: <a href="https://wa.me/918590225627" target="_blank" rel="noopener noreferrer" style={{ color: "#008080", fontWeight: "600", textDecoration: "none" }}>+91 85902 25627</a><br />
+                Direct Call: <a href="tel:+918086301409" style={{ color: "#008080", fontWeight: "600", textDecoration: "none" }}>+91 80863 01409</a>
               </p>
             </div>
 

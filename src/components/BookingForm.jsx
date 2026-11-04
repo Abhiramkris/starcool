@@ -122,13 +122,19 @@ export default function BookingForm({ selectedService, setSelectedService }) {
           </p>
           
           <div className="direct-contact-action" style={{ marginTop: "24px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href="tel:+918590225627" className="btn btn-gradient btn-call-large">
-              <i className="fa-solid fa-phone-volume" style={{ marginRight: "8px" }}></i>
-              Call +91 85902 25627
+            <a 
+              href="https://wa.me/918590225627?text=Hi%20Star%20Cool%2C%20I%20would%20like%20to%20book%20a%20home%20appliance%20repair%20service." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-call-large"
+              style={{ backgroundColor: "#25d366", color: "#ffffff", borderColor: "#20ba59" }}
+            >
+              <i className="fa-brands fa-whatsapp" style={{ marginRight: "8px" }}></i>
+              WhatsApp: +91 85902 25627
             </a>
-            <a href="tel:+918086301409" className="btn btn-secondary btn-call-large">
+            <a href="tel:+918086301409" className="btn btn-gradient btn-call-large">
               <i className="fa-solid fa-phone-volume" style={{ marginRight: "8px" }}></i>
-              Call +91 80863 01409
+              Direct Call: +91 80863 01409
             </a>
           </div>
         </div>
