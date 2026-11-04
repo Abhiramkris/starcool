@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="footer-about">
           <Link href="/" className="logo footer-logo" style={{ display: "flex", alignItems: "center", gap: "14px", textDecoration: "none" }}>
             <Image 
-              src="/logo-icon-teal.png" 
+              src="/logo-icon-blue.png" 
               alt="Star Cool Logo" 
               width={62} 
               height={62} 

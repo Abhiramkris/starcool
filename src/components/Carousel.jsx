@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const slideData = [
   {
@@ -316,40 +317,56 @@ export default function Carousel({ setSelectedService }) {
         </button>
 
         <div className="carousel-scroller" ref={scrollerRef} id="carousel-scroller">
-          {paddedSlideData.map((slide, idx) => (
-            <div 
-              className="carousel-item" 
-              key={`${slide.id}-${idx}`}
-              ref={(el) => (itemsRef.current[idx] = el)}
-            >
-              <div className="slide-card">
-                <div className="slide-img-wrapper">
-                  <Image 
-                    src={slide.img} 
-                    alt={slide.alt} 
-                    width={340}
-                    height={220}
-                    priority={idx === 3}
-                    style={{ objectFit: "cover" }}
-                  />
-                  <div className="service-tag">{slide.tag}</div>
-                </div>
-                <div className="slide-content">
-                  <h3 className="slide-title">{slide.title}</h3>
-                  <p className="slide-desc">{slide.desc}</p>
-                  <div className="slide-footer">
-                    <span className="price-indicator">From {slide.price}</span>
-                    <button 
-                      className="btn-arrow" 
-                      onClick={() => handleBookNow(slide.id)}
-                    >
-                      Book Now <i className="fa-solid fa-arrow-right"></i>
-                    </button>
+          {paddedSlideData.map((slide, idx) => {
+            const serviceUrl = slide.id === "washing_machine" 
+              ? "/services/washing-machine" 
+              : slide.id === "tv" 
+              ? "/services" 
+              : `/services/${slide.id}`;
+
+            return (
+              <div 
+                className="carousel-item" 
+                key={`${slide.id}-${idx}`}
+                ref={(el) => (itemsRef.current[idx] = el)}
+              >
+                <div className="slide-card" style={{ cursor: "pointer" }}>
+                  <Link href={serviceUrl} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+                    <div className="slide-img-wrapper">
+                      <Image 
+                        src={slide.img} 
+                        alt={slide.alt} 
+                        width={340}
+                        height={220}
+                        priority={idx === 3}
+                        style={{ objectFit: "cover" }}
+                      />
+                      <div className="service-tag">{slide.tag}</div>
+                    </div>
+                    <div className="slide-content">
+                      <h3 className="slide-title">{slide.title}</h3>
+                      <p className="slide-desc">{slide.desc}</p>
+                    </div>
+                  </Link>
+
+                  <div className="slide-content" style={{ paddingTop: 0 }}>
+                    <div className="slide-footer">
+                      <span className="price-indicator">From {slide.price}</span>
+                      <button 
+                        className="btn-arrow" 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleBookNow(slide.id);
+                        }}
+                      >
+                        Book Now <i className="fa-solid fa-arrow-right"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="carousel-indicators">

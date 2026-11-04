@@ -47,7 +47,7 @@ export default function Navbar() {
         <div className="container header-container">
           <Link href="/" className="logo" id="header-logo" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }} onClick={handleLinkClick}>
             <Image 
-              src="/logo-icon-teal.png" 
+              src="/logo-icon-blue.png" 
               alt="Star Cool Logo" 
               width={56} 
               height={56} 
