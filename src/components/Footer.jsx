@@ -8,15 +8,15 @@ export default function Footer() {
     <footer className="main-footer" id="contact">
       <div className="container footer-grid">
         <div className="footer-about">
-          <Link href="/" className="logo" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
+          <Link href="/" className="logo footer-logo" style={{ display: "flex", alignItems: "center", gap: "14px", textDecoration: "none" }}>
             <Image 
               src="/logo-icon-teal.png" 
               alt="Star Cool Logo" 
-              width={48} 
-              height={48} 
-              style={{ objectFit: "contain" }}
+              width={62} 
+              height={62} 
+              style={{ objectFit: "contain", flexShrink: 0 }}
             />
-            <span className="logo-text" style={{ fontSize: "24px", fontWeight: "800", letterSpacing: "0.5px", color: "#0a2540" }}>
+            <span className="logo-text" style={{ fontSize: "28px", fontWeight: "900", letterSpacing: "0.5px", color: "#0a2540", lineHeight: "1" }}>
               STAR <span className="text-cyan">COOL</span>
             </span>
           </Link>
