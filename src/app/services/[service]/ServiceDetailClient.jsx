@@ -111,17 +111,17 @@ export default function ServiceDetailClient({ service }) {
           </div>
         </section>
 
-        {/* Official Rate Card Section */}
+        {/* Official Service Coverage List */}
         {service.rateCard && service.rateCard.length > 0 && (
           <section className="rate-card-section" style={{ padding: "60px 0 20px" }}>
             <div className="container" style={{ maxWidth: "860px" }}>
               <div className="section-header" style={{ textAlign: "center", marginBottom: "32px" }}>
-                <span className="subtitle font-bold text-teal">Transparent Pricing</span>
+                <span className="subtitle font-bold text-teal">Comprehensive Solutions</span>
                 <h2 style={{ fontSize: "2rem", fontWeight: "800", color: "var(--text-primary)", margin: "10px 0" }}>
-                  Official Service Rate Card
+                  Service Offerings
                 </h2>
                 <p style={{ color: "var(--text-secondary)" }}>
-                  Clear, upfront estimates with zero hidden charges. Doorstep inspection and diagnostics across Kochi.
+                  Transparent doorstep inspection, genuine parts, and expert diagnostics across Kochi.
                 </p>
               </div>
 
@@ -141,9 +141,6 @@ export default function ServiceDetailClient({ service }) {
                         <th style={{ padding: "16px 24px", fontSize: "14px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                           Service Description
                         </th>
-                        <th style={{ padding: "16px 24px", fontSize: "14px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.5px", textAlign: "right", whiteSpace: "nowrap" }}>
-                          Estimated Rate (₹)
-                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -159,16 +156,13 @@ export default function ServiceDetailClient({ service }) {
                             <i className="fa-solid fa-circle-check text-cyan" style={{ marginRight: "10px", fontSize: "13px" }}></i>
                             {item.service}
                           </td>
-                          <td style={{ padding: "16px 24px", color: "var(--teal-dark)", fontWeight: "700", fontSize: "15.5px", textAlign: "right", whiteSpace: "nowrap" }}>
-                            {item.rate}
-                          </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
                 <div style={{ padding: "14px 24px", backgroundColor: "#f8fafc", borderTop: "1px solid rgba(0,0,0,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px", fontSize: "13px", color: "var(--text-muted)" }}>
-                  <span>* Final charges subject to physical inspection & required spare parts.</span>
+                  <span>* Doorstep inspection & diagnosis available across all areas in Kochi.</span>
                   <a href="#booking" style={{ color: "var(--teal)", fontWeight: "700" }}>Book Now &rarr;</a>
                 </div>
               </div>
